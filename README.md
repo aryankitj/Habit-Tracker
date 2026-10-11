@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -76,3 +77,7 @@ export default defineConfig([
 ])
 
 ```
+=======
+# Habit-Tracker
+Made with React and TypeScript. Having LocalStorage as storage
+>>>>>>> 6aacd32d3b060b20ba797735f3229d1310f31294
