@@ -1,83 +1,99 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# Habit Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple weekly habit tracker built with **React, TypeScript, and Tailwind CSS**. Track your daily habits, monitor your consistency, and build better routines with a clean, dark-themed interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Add Habits:** Create new habits to track your daily routines.
+- **Delete Habits:** Remove habits you no longer want to track.
+- **Weekly Tracking:** View your habits across a Monday-to-Sunday calendar.
+- **Daily Completion:** Mark habits as complete or toggle them back to incomplete for a particular day.
+- **Weekly Navigation:** Move between weeks to view and manage your habit completions.
+- **Completion Streaks:** See your current consecutive-day completion streak for each habit.
+- **Daily Progress:** View how many habits you've completed today.
+- **Persistent Storage:** Save habits and completion records in browser `localStorage`, so your data remains available after refreshing the page.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React 19** — Component-based UI
+- **TypeScript** — Type safety
+- **Vite** — Development server and build tool
+- **Tailwind CSS 4** — Styling
+- **date-fns** — Date manipulation and formatting
+- **React Context API** — Shared habit state
+- **Custom React Hook** — Reusable `useLocalStorage` logic
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/) (a version compatible with your installed Vite version)
+- npm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone the repository:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   git clone https://github.com/aryankitj/Habit-Tracker.git
+   ```
 
+2. Navigate to the project directory:
+
+   ```bash
+   cd Habit-Tracker
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL printed in your terminal to use the application.
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the development server |
+| `npm run build` | Type-checks TypeScript and builds the production application |
+| `npm run lint` | Runs ESLint |
+| `npm run preview` | Previews the production build locally |
+
+## Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── Button.tsx
+│   ├── HabitForm.tsx
+│   ├── HabitList.tsx
+│   └── Header.tsx
+├── context/
+│   ├── HabitProvider.tsx
+│   └── useHabits.ts
+├── hooks/
+│   └── useLocalStorage.ts
+├── App.css
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Data Storage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The application uses the browser's `localStorage` to persist habit data. Habit information and completion dates are stored locally in the browser, without requiring a backend server or database.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Note:** Data is specific to the browser and device being used. Clearing browser storage can remove saved habits.
 
-```
-=======
-# Habit-Tracker
-Made with React and TypeScript. Having LocalStorage as storage
->>>>>>> 6aacd32d3b060b20ba797735f3229d1310f31294
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
